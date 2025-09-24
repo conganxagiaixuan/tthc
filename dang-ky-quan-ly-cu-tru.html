@@ -2,6 +2,7 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thủ tục quản lý, đăng ký cư trú - Công an xã Giai Xuân</title>
   <style>
     body {
@@ -14,45 +15,48 @@
     .container {
       width: 100%;
       max-width: 720px;
-      margin: 15px auto 25px;           /* khoảng cách trên 15px, dưới 25px */
+      margin: 15px auto 25px;
       padding: 25px;
-      border: 2px solid rgba(0, 0, 0, 0.2); /* viền xám mờ */
-      background: rgba(255, 255, 255, 0.5); /* nền trắng mờ */
-      border-radius: 12px;           
+      border: 2px solid rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       display: flex;
       flex-direction: column;
     }
     .header {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
     .header img {
       max-width: 160px;
       height: auto;
       display: block;
-      margin: 0 auto 15px;
+      margin: 0 auto 10px;
     }
     .header h1 {
       color: red;
-      margin: 0px 0;
+      margin: 2px 0;
       font-size: 22px;
     }
     .header h2 {
       color: red;
-      margin: 0px 0;
+      margin: 2px 0 8px 0;
       font-size: 20px;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+      padding-bottom: 5px;
+      display: inline-block;
     }
     h3 {
       text-align: center;
       margin: 20px 0;
       padding: 12px;
-      background: rgba(200, 230, 255, 1); /* nền xanh nhạt mờ */
-      border: 1px solid #b0d4f1;           /* viền xanh nhạt */
+      background: rgba(200, 230, 255, 1);
+      border: 1px solid #b0d4f1;
       border-radius: 6px;
       font-size: 18px;
       color: #003366;
-      width: 100%;                         /* rộng bằng container */
+      width: 100%;
       box-sizing: border-box;
     }
     .links ul {
@@ -64,8 +68,8 @@
       font-size: 16px;
       margin: 12px 0;
       padding: 12px 15px;
-      background: rgba(240, 240, 240, 0.9); 
-      border: 1px solid #ddd;              /* viền nhạt */
+      background: rgba(240, 240, 240, 0.9);
+      border: 1px solid #ddd;
       border-radius: 8px;
       width: 100%;
       box-sizing: border-box;
@@ -90,6 +94,43 @@
       padding-top: 10px;
       color: #333;
     }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        margin: 10px;
+        padding: 15px;
+      }
+      .header img {
+        max-width: 130px;
+      }
+      .header h1 {
+        font-size: 20px;
+      }
+      .header h2 {
+        font-size: 18px;
+      }
+      h3 {
+        font-size: 16px;
+        padding: 10px;
+      }
+      .links li {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header img {
+        max-width: 100px;
+      }
+      .header h1, .header h2 {
+        font-size: 16px;
+      }
+      h3 {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -97,8 +138,7 @@
     <div class="header">
       <img src="logo-cand.png" alt="Logo Công an">
       <h1>CÔNG AN TỈNH NGHỆ AN</h1>
-      <h1>CÔNG AN XÃ GIAI XUÂN</h1>
-      <h2>-----------------</h2>
+      <h2>CÔNG AN XÃ GIAI XUÂN</h2>
     </div>
 
     <h3>THỦ TỤC HÀNH CHÍNH THUỘC LĨNH VỰC ĐĂNG KÝ, QUẢN LÝ CƯ TRÚ</h3>
@@ -110,7 +150,6 @@
         <li>🏠 Điều chỉnh thông tin cư trú: <a href="link">link</a></li>
         <li>🏠 Gia hạn tạm trú: <a href="link">link</a></li>
         <li>🏠 Khai báo tạm vắng: <a href="link">link</a></li>
-        <!-- Có thể thêm nhiều mục khác -->
       </ul>
     </div>
 
