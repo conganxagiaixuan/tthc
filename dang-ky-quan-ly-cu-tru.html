@@ -13,8 +13,8 @@
       background-size: cover;
     }
     .container {
-      width: 90%;              /* co theo màn hình */
-      max-width: 720px;        /* nhưng không vượt quá 720px */
+      width: calc(100% - 20px);  /* luôn chừa 10px hai bên */
+      max-width: 720px;
       margin: 15px auto;
       padding: 20px;
       border: 2px solid rgba(0, 0, 0, 0.2);
@@ -27,7 +27,7 @@
       margin-bottom: 15px;
     }
     .header img {
-      width: 40%;      /* logo co theo màn hình */
+      width: 40%;          /* logo co theo màn hình */
       max-width: 160px;
       height: auto;
       margin: 0 auto 10px;
@@ -50,7 +50,7 @@
       background: rgba(200, 230, 255, 1);
       border: 1px solid #b0d4f1;
       border-radius: 6px;
-      font-size: clamp(14px, 3.5vw, 18px); /* responsive font */
+      font-size: clamp(14px, 3.5vw, 18px);
       color: #003366;
     }
     .links ul {
@@ -74,7 +74,7 @@
     .links a {
       color: blue;
       text-decoration: none;
-      word-break: break-word; /* link dài không làm vỡ layout */
+      word-break: break-word;
     }
     .links a:hover {
       text-decoration: underline;
