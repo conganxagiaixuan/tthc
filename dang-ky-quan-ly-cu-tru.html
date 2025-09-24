@@ -17,10 +17,10 @@
     }
     .container {
       width: 100%;
-      max-width: 720px;  /* khung gọn lại */
+      max-width: 720px;
       padding: 25px;
       border: 2px solid #000;
-      background: rgba(255, 255, 255, 0.8); /* nền trắng mờ */
+      background: rgba(255, 255, 255, 0.8);
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       display: flex;
@@ -62,16 +62,18 @@
     }
     .links li {
       font-size: 16px;
-      margin: 12px 0;                /* khoảng cách giữa các dòng */
-      padding: 10px 15px;            /* khoảng cách bên trong */
-      background: rgba(240, 240, 240, 0.9); /* nền xám nhạt mờ nhẹ */
-      border: 1px solid #ccc;        /* viền mảnh */
-      border-radius: 8px;            /* bo góc */
+      margin: 12px auto;                /* khoảng cách giữa các dòng */
+      padding: 10px 15px;
+      background: rgba(240, 240, 240, 0.9);
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 90%;                       /* chỉ chiếm 90% khung cha */
+      box-sizing: border-box;
       transition: background 0.3s, transform 0.2s;
     }
     .links li:hover {
       background: rgba(220, 220, 220, 1);
-      transform: translateY(-2px);   /* hiệu ứng nổi khi hover */
+      transform: translateY(-2px);
     }
     .links a {
       color: blue;
