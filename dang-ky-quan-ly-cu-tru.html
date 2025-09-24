@@ -13,48 +13,44 @@
       background-size: cover;
     }
     .container {
-      width: 100%;
-      max-width: 720px;
-      margin: 15px auto 25px;
-      padding: 25px;
+      width: 95%;                /* luôn chiếm 95% màn hình */
+      max-width: 720px;          /* nhưng không vượt quá 720px */
+      margin: 15px auto;
+      padding: 20px;
       border: 2px solid rgba(0, 0, 0, 0.2);
       background: rgba(255, 255, 255, 0.5);
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      display: flex;
-      flex-direction: column;
     }
     .header {
       text-align: center;
       margin-bottom: 15px;
     }
     .header img {
-      max-width: 160px;
+      max-width: 30%;    /* logo co theo màn hình */
       height: auto;
-      display: block;
       margin: 0 auto 10px;
     }
     .header h1 {
       color: red;
       margin: 0;
-      font-size: 22px;
+      font-size: 2.5vw; /* font responsive theo chiều rộng màn hình */
+      max-font-size: 22px;
     }
-    .header .underline {
-      border-bottom: 2px solid #000; /* kẻ đen */
+    .underline {
+      border-bottom: 2px solid #000;
       margin: 6px auto 0 auto;
       width: 100%;
     }
     h3 {
       text-align: center;
       margin: 20px 0;
-      padding: 12px;
+      padding: 10px;
       background: rgba(200, 230, 255, 1);
       border: 1px solid #b0d4f1;
       border-radius: 6px;
       font-size: 18px;
       color: #003366;
-      width: 100%;
-      box-sizing: border-box;
     }
     .links ul {
       list-style: none;
@@ -63,13 +59,11 @@
     }
     .links li {
       font-size: 16px;
-      margin: 12px 0;
-      padding: 12px 15px;
+      margin: 10px 0;
+      padding: 10px;
       background: rgba(240, 240, 240, 0.9);
       border: 1px solid #ddd;
       border-radius: 8px;
-      width: 100%;
-      box-sizing: border-box;
       transition: background 0.3s, transform 0.2s;
     }
     .links li:hover {
@@ -91,45 +85,17 @@
       padding-top: 10px;
       color: #333;
     }
-
-    /* Responsive Tablet */
-    @media (max-width: 768px) {
-      .container {
-        margin: 10px;
-        padding: 15px;
-        border-radius: 8px;
-      }
-      .header img {
-        max-width: 130px;
-      }
+    /* Mobile ưu tiên font nhỏ */
+    @media (max-width: 480px) {
       .header h1 {
-        font-size: 20px;
+        font-size: 16px;
       }
       h3 {
-        font-size: 16px;
-        padding: 10px;
+        font-size: 14px;
       }
       .links li {
         font-size: 14px;
-        padding: 10px;
-      }
-    }
-
-    /* Responsive Mobile */
-    @media (max-width: 480px) {
-      .container {
-        margin: 5px;
-        padding: 10px;
-        border-radius: 6px;
-      }
-      .header img {
-        max-width: 100px;
-      }
-      .header h1 {
-        font-size: 16px;
-      }
-      h3 {
-        font-size: 14px;
+        padding: 8px;
       }
     }
   </style>
