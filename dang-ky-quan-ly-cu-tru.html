@@ -13,7 +13,8 @@
       background-size: cover;
     }
     .container {
-      width: calc(100% - 20px);   /* luôn chừa 10px hai bên */
+      width: calc(100% - 20px);  /* co theo màn hình, chừa 10px 2 bên */
+      max-width: 720px;          /* PC thì không vượt quá 720px */
       margin: 15px auto;
       padding: 20px;
       border: 2px solid rgba(0, 0, 0, 0.2);
@@ -27,7 +28,7 @@
       margin-bottom: 15px;
     }
     .header img {
-      width: 40%;          /* logo co theo màn hình */
+      width: 40%;
       max-width: 150px;
       height: auto;
       margin: 0 auto 10px;
@@ -36,7 +37,7 @@
     .header h1 {
       color: red;
       margin: 0;
-      font-size: clamp(16px, 4vw, 22px); /* responsive font */
+      font-size: clamp(16px, 4vw, 22px);
     }
     .underline {
       border-bottom: 2px solid #000;
@@ -75,7 +76,7 @@
     .links a {
       color: blue;
       text-decoration: none;
-      word-break: break-word; /* link dài không phá layout */
+      word-break: break-word;
     }
     .links a:hover {
       text-decoration: underline;
