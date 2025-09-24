@@ -8,14 +8,15 @@
       font-family: "Times New Roman", serif;
       line-height: 1.6;
       margin: 0;
-      background: #fdfdfd;
+      background: url("background.jpg") no-repeat center center fixed;
+      background-size: cover;
     }
     .container {
       max-width: 800px;
-      margin: 20px auto;
+      margin: 40px auto;
       padding: 20px;
       border: 2px solid #000;
-      background: #fff;
+      background: rgba(255, 255, 255, 0.95); /* nền trắng trong suốt để nổi bật nội dung */
       display: flex;
       flex-direction: column;
       min-height: 90vh;
@@ -83,8 +84,12 @@
     </div>
 
     <div class="footer">
-      © 2025 Công an xã Giai Xuân. All rights reserved.
+      © <span id="year"></span> Công an xã Giai Xuân. All rights reserved.
     </div>
   </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
