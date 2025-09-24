@@ -7,14 +7,13 @@
   <style>
     body {
       font-family: "Times New Roman", serif;
-      line-height: 1.6;
       margin: 0;
       background: url("hinh-nen-web-cax.png") no-repeat center center fixed;
       background-size: cover;
     }
     .container {
-      width: calc(100% - 20px);  /* luôn chừa 10px hai bên */
-      max-width: 720px;
+      width: calc(100% - 20px);   /* chừa 10px hai bên */
+      max-width: 720px;          /* không vượt quá 720px */
       margin: 15px auto;
       padding: 20px;
       border: 2px solid rgba(0, 0, 0, 0.2);
@@ -27,8 +26,8 @@
       margin-bottom: 15px;
     }
     .header img {
-      width: 40%;          /* logo co theo màn hình */
-      max-width: 160px;
+      max-width: 150px;
+      width: 40%;
       height: auto;
       margin: 0 auto 10px;
       display: block;
@@ -36,11 +35,11 @@
     .header h1 {
       color: red;
       margin: 0;
-      font-size: clamp(16px, 4vw, 22px); /* co dãn theo màn hình */
+      font-size: clamp(16px, 4vw, 22px);
     }
     .underline {
       border-bottom: 2px solid #000;
-      margin: 6px auto 0 auto;
+      margin: 6px auto 0;
       width: 100%;
     }
     h3 {
@@ -65,19 +64,11 @@
       background: rgba(240, 240, 240, 0.9);
       border: 1px solid #ddd;
       border-radius: 8px;
-      transition: background 0.3s, transform 0.2s;
-    }
-    .links li:hover {
-      background: rgba(220, 220, 220, 1);
-      transform: translateY(-2px);
     }
     .links a {
       color: blue;
       text-decoration: none;
       word-break: break-word;
-    }
-    .links a:hover {
-      text-decoration: underline;
     }
     .footer {
       text-align: center;
@@ -102,21 +93,5 @@
 
     <div class="links">
       <ul>
-        <li>🏠 Đăng ký thường trú: <a href="link">link</a></li>
-        <li>🏠 Đăng ký tạm trú: <a href="link">link</a></li>
-        <li>🏠 Điều chỉnh thông tin cư trú: <a href="link">link</a></li>
-        <li>🏠 Gia hạn tạm trú: <a href="link">link</a></li>
-        <li>🏠 Khai báo tạm vắng: <a href="link">link</a></li>
-      </ul>
-    </div>
-
-    <div class="footer">
-      © <span id="year"></span> Công an xã Giai Xuân. All rights reserved.
-    </div>
-  </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+        <li>🏠 Đăng ký thường trú: <a href="#">link</a></li>
+        <li>🏠
