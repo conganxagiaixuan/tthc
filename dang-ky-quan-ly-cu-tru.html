@@ -14,9 +14,11 @@
     .container {
       max-width: 800px;
       margin: 40px auto;
-      padding: 20px;
+      padding: 20px 30px;
       border: 2px solid #000;
-      background: rgba(255, 255, 255, 0.95); /* nền trắng trong suốt để nổi bật nội dung */
+      background: rgba(255, 255, 255, 0.9); /* nền trắng mờ nhẹ */
+      border-radius: 12px; /* bo tròn nhẹ */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* đổ bóng nhẹ để nổi bật */
       display: flex;
       flex-direction: column;
       min-height: 90vh;
@@ -29,11 +31,17 @@
       max-width: 120px;
       height: auto;
       display: block;
-      margin: 0 auto 10px;
+      margin: 0 auto 15px;
     }
-    .header h1, .header h2 {
+    .header h1 {
       color: red;
       margin: 5px 0;
+      font-size: 22px;
+    }
+    .header h2 {
+      color: red;
+      margin: 5px 0;
+      font-size: 20px;
     }
     h3 {
       text-align: center;
@@ -44,7 +52,11 @@
       margin: 0 auto;
       flex: 1;
     }
-    .links p {
+    .links ul {
+      list-style: none;
+      padding: 0;
+    }
+    .links li {
       font-size: 16px;
       margin: 10px 0;
     }
@@ -70,17 +82,19 @@
     <div class="header">
       <img src="logo-cand.png" alt="Logo Công an">
       <h1>CÔNG AN TỈNH NGHỆ AN</h1>
-      <h1>CÔNG AN XÃ GIAI XUÂN</h1>
+      <h2>CÔNG AN XÃ GIAI XUÂN</h2>
     </div>
 
     <h3>THỦ TỤC HÀNH CHÍNH THUỘC LĨNH VỰC ĐĂNG KÝ, QUẢN LÝ CƯ TRÚ</h3>
 
     <div class="links">
-      <p>🏠 Đăng ký thường trú: <a href="link">link</a></p>
-      <p>🏠 Đăng ký tạm trú: <a href="link">link</a></p>
-      <p>🏠 Điều chỉnh thông tin cư trú: <a href="link">link</a></p>
-      <p>🏠 Gia hạn tạm trú: <a href="link">link</a></p>
-      <p>🏠 Khai báo tạm vắng: <a href="link">link</a></p>
+      <ul>
+        <li>🏠 Đăng ký thường trú: <a href="link">link</a></li>
+        <li>🏠 Đăng ký tạm trú: <a href="link">link</a></li>
+        <li>🏠 Điều chỉnh thông tin cư trú: <a href="link">link</a></li>
+        <li>🏠 Gia hạn tạm trú: <a href="link">link</a></li>
+        <li>🏠 Khai báo tạm vắng: <a href="link">link</a></li>
+      </ul>
     </div>
 
     <div class="footer">
