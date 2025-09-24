@@ -36,16 +36,13 @@
     }
     .header h1 {
       color: red;
-      margin: 0;             /* sát trên dưới */
+      margin: 0;
       font-size: 22px;
     }
-    .header h2 {
-      color: red;
-      margin: 0 0 6px 0;     /* chỉ cách phía dưới 6px */
-      font-size: 20px;
+    .header .underline {
       border-bottom: 2px solid #000; /* kẻ đen */
-      padding-bottom: 5px;
-      display: inline-block;
+      margin: 6px auto 0 auto;
+      width: 100%;
     }
     h3 {
       text-align: center;
@@ -107,9 +104,6 @@
       .header h1 {
         font-size: 20px;
       }
-      .header h2 {
-        font-size: 18px;
-      }
       h3 {
         font-size: 16px;
         padding: 10px;
@@ -124,7 +118,7 @@
       .header img {
         max-width: 100px;
       }
-      .header h1, .header h2 {
+      .header h1 {
         font-size: 16px;
       }
       h3 {
@@ -138,10 +132,11 @@
     <div class="header">
       <img src="logo-cand.png" alt="Logo Công an">
       <h1>CÔNG AN TỈNH NGHỆ AN</h1>
-      <h1>CÔNG AN XÃ GIAI XUÂN</h1><hr>
+      <h1>CÔNG AN XÃ GIAI XUÂN</h1>
+      <div class="underline"></div>
     </div>
 
-    <h3>THỦ TỤC HÀNH CHÍNH THUỘC LĨNH VỰC ĐĂNG KÝ, QUẢN LÝ CƯ TRÚ</h3><hr>
+    <h3>THỦ TỤC HÀNH CHÍNH THUỘC LĨNH VỰC ĐĂNG KÝ, QUẢN LÝ CƯ TRÚ</h3>
 
     <div class="links">
       <ul>
