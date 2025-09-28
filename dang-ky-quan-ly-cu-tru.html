@@ -13,8 +13,8 @@
       background-size: cover;
     }
     .container {
-      width: calc(100% - 20px);  /* co theo màn hình, chừa 10px 2 bên */
-      max-width: 720px;          /* PC thì không vượt quá 720px */
+      width: calc(100% - 20px);
+      max-width: 720px;
       margin: 15px auto;
       padding: 20px;
       border: 2px solid rgba(0, 0, 0, 0.2);
@@ -54,32 +54,29 @@
       font-size: clamp(14px, 3.5vw, 18px);
       color: #003366;
     }
-    .links ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    /* Button full width */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
-    .links li {
+    .links .btn {
+      display: block;
+      width: 100%;
+      text-align: left;
       font-size: clamp(13px, 3.5vw, 16px);
-      margin: 10px 0;
-      padding: 10px;
-      background: rgba(240, 240, 240, 0.9);
+      padding: 12px 15px;
+      background: rgba(240, 240, 240, 0.95);
       border: 1px solid #ddd;
       border-radius: 8px;
+      text-decoration: none;
+      color: #000;
       transition: background 0.3s, transform 0.2s;
       box-sizing: border-box;
     }
-    .links li:hover {
+    .links .btn:hover {
       background: rgba(220, 220, 220, 1);
       transform: translateY(-2px);
-    }
-    .links a {
-      color: blue;
-      text-decoration: none;
-      word-break: break-word;
-    }
-    .links a:hover {
-      text-decoration: underline;
     }
     .footer {
       text-align: center;
@@ -103,13 +100,11 @@
     <h3>THỦ TỤC HÀNH CHÍNH THUỘC LĨNH VỰC ĐĂNG KÝ, QUẢN LÝ CƯ TRÚ</h3>
 
     <div class="links">
-      <ul>
-        <li>🏠 Đăng ký thường trú: <a href="#">link</a></li>
-        <li>🏠 Đăng ký tạm trú: <a href="#">link</a></li>
-        <li>🏠 Điều chỉnh thông tin cư trú: <a href="#">link</a></li>
-        <li>🏠 Gia hạn tạm trú: <a href="#">link</a></li>
-        <li>🏠 Khai báo tạm vắng: <a href="#">link</a></li>
-      </ul>
+      <a href="#" class="btn">🏠 Đăng ký thường trú</a>
+      <a href="#" class="btn">🏠 Đăng ký tạm trú</a>
+      <a href="#" class="btn">🏠 Điều chỉnh thông tin cư trú</a>
+      <a href="#" class="btn">🏠 Gia hạn tạm trú</a>
+      <a href="#" class="btn">🏠 Khai báo tạm vắng</a>
     </div>
 
     <div class="footer">
