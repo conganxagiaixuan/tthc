@@ -61,10 +61,12 @@
       gap: 12px;
     }
     .links .btn {
-      display: block;
+      display: flex;
+      flex-direction: column; /* icon trên, text dưới */
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      font-size: clamp(13px, 3vw, 15px);
-      padding: 12px;
+      padding: 20px 10px;
       background: rgba(240, 240, 240, 0.95);
       border: 1px solid #ddd;
       border-radius: 8px;
@@ -75,6 +77,13 @@
     .links .btn:hover {
       background: rgba(220, 220, 220, 1);
       transform: translateY(-2px);
+    }
+    .links .btn .icon {
+      font-size: 28px;   /* icon to */
+      margin-bottom: 8px;
+    }
+    .links .btn .text {
+      font-size: clamp(13px, 3vw, 15px);
     }
     .footer {
       text-align: center;
@@ -98,11 +107,26 @@
     <h3>THỦ TỤC HÀNH CHÍNH THUỘC LĨNH VỰC ĐĂNG KÝ, QUẢN LÝ CƯ TRÚ</h3>
 
     <div class="links">
-      <a href="#" class="btn">🏠 Đăng ký thường trú</a>
-      <a href="#" class="btn">🏠 Đăng ký tạm trú</a>
-      <a href="#" class="btn">🏠 Điều chỉnh thông tin</a>
-      <a href="#" class="btn">🏠 Gia hạn tạm trú</a>
-      <a href="#" class="btn">🏠 Khai báo tạm vắng</a>
+      <a href="#" class="btn">
+        <span class="icon">🏠</span>
+        <span class="text">Đăng ký thường trú</span>
+      </a>
+      <a href="#" class="btn">
+        <span class="icon">🏠</span>
+        <span class="text">Đăng ký tạm trú</span>
+      </a>
+      <a href="#" class="btn">
+        <span class="icon">📝</span>
+        <span class="text">Điều chỉnh thông tin</span>
+      </a>
+      <a href="#" class="btn">
+        <span class="icon">📅</span>
+        <span class="text">Gia hạn tạm trú</span>
+      </a>
+      <a href="#" class="btn">
+        <span class="icon">🚶</span>
+        <span class="text">Khai báo tạm vắng</span>
+      </a>
     </div>
 
     <div class="footer">
