@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thủ tục quản lý, đăng ký cư trú - Công an xã Giai Xuân</title>
+  <title>Thủ tục Cấp, quản lý Căn cước và định danh điện tử - Công an xã Giai Xuân</title>
   <style>
     body {
       font-family: "Times New Roman", serif;
@@ -86,6 +86,26 @@
       padding-top: 10px;
       color: #333;
     }
+        /* Nút Back nổi */
+    .back-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;          /* đổi thành right:20px nếu muốn bên phải */
+      background: #007bff;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.2s;
+      z-index: 9999;       /* luôn nổi trên cùng */
+    }
+    .back-btn:hover {
+      background: #0056b3;
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -97,27 +117,42 @@
       <div class="underline"></div>
     </div>
 
-    <h3>THỦ TỤC HÀNH CHÍNH THUỘC LĨNH VỰC ĐĂNG KÝ, QUẢN LÝ CƯ TRÚ</h3>
+    <h3>THỦ TỤC HÀNH CHÍNH THUỘC LĨNH VỰC CẤP, QUẢN LÝ CĂN CƯỚC VÀ ĐỊNH DANH ĐIỆN TỬ</h3>
 
     <div class="links">
-      <a href="https://officialaccount.me/d?id=284bc4dd1198f8c6a189&pageId=3034788837083453431" class="btn">🏠 Đăng ký thường trú</a>
-      <a href="https://officialaccount.me/d?id=929d1f0bca4e23107a5f&pageId=3034788837083453431" class="btn">🏠 Đăng ký tạm trú</a>
-      <a href="https://officialaccount.me/d?id=59951802cd4724197d56&pageId=3034788837083453431" class="btn">🏠 Điều chỉnh thông tin về cư trú trong cơ sở dữ liệu về cư trú</a>
-      <a href="https://officialaccount.me/d?id=929d1f0bca4e23107a5f&pageId=3034788837083453431" class="btn">🏠 Gia hạn tạm trú</a>
-      <a href="https://officialaccount.me/d?id=2f3deb5e3e1bd7458e0a&pageId=3034788837083453431" class="btn">🏠 Khai báo tạm vắng</a>
-      <a href="https://officialaccount.me/d?id=68de32bee7fb0ea557ea&pageId=3034788837083453431" class="btn">🏠 Khai báo thông tin về cư trú đối với người chưa đủ điều kiện đăng ký thường trú, tạm trú</a>
-      <a href="https://officialaccount.me/d?id=52c0d9a30ce6e5b8bcf7&pageId=3034788837083453431" class="btn">🏠 Tách hộ</a>
-      <a href="https://officialaccount.me/d?id=75baa18874cd9d93c4dc&pageId=3034788837083453431" class="btn">🏠 Thông báo lưu trú</a>
-      <a href="https://officialaccount.me/d?id=1675af477a02935cca13&pageId=3034788837083453431" class="btn">🏠 Xác nhận thông tin về cư trú</a>
-      <a href="https://officialaccount.me/d?id=09215d158850610e3841&pageId=3034788837083453431" class="btn">🏠 Xoá đăng ký tạm trú</a>
-      <a href="https://officialaccount.me/d?id=0f09363de3780a265369&pageId=3034788837083453431" class="btn">🏠 Xoá đăng ký thường trú</a>
-    </div>
+      <a href="https://officialaccount.me/d?id=5e69875d5218bb46e209&pageId=3034788837083453431" class="btn">💳 Khai thác thông tin công dân trong cơ sở dữ liệu quốc gia về dân cư</a>
+      <a href="https://officialaccount.me/d?id=09e9c6e713a2fafca3b3&pageId=3034788837083453431" class="btn">💳 Khai thác thông tin công dân trong cơ sở dữ liệu quốc gia căn cước</a>
+      <a href="https://officialaccount.me/d?id=eea75ca989ec60b239fd&pageId=3034788837083453431" class="btn">💳 Khai thác thông tin người gốc việt nam chưa xác định được quốc tịch trong cơ sở dữ liệu căn cước</a>
+      <a href="https://officialaccount.me/d?id=5b19d9170c52e50cbc43&pageId=3034788837083453431" class="btn">💳 Khai thác thông tin người gốc việt nam chưa xác định được quốc tịch trong cơ sở dữ liệu căn cước</a>
+      <a href="https://officialaccount.me/d?id=6ece08c3dd8634d86d97&pageId=3034788837083453431" class="btn">💳 Tích hợp, cập nhật, điều chỉnh thông tin trên thẻ căn cước</a>
+      <a href="https://officialaccount.me/d?id=471e3113e4560d085447&pageId=3034788837083453431" class="btn">💳 Cấp thẻ căn cước cho người đủ 14 tuổi trở lên</a>
+      <a href="https://officialaccount.me/d?id=c51c82115754be0ae745&pageId=3034788837083453431" class="btn">💳 Cấp thẻ căn cước cho người dưới 14 tuổi</a>
+      <a href="https://officialaccount.me/d?id=2cd526d8f39d1ac3438c&pageId=3034788837083453431" class="btn">💳 Cấp đổi thẻ căn cước</a>
+      <a href="https://officialaccount.me/d?id=6a8dba806fc5869bdfd4&pageId=3034788837083453431" class="btn">💳 Cấp lại thẻ căn cước</a>
+      <a href="https://officialaccount.me/d?id=f07e9f7c4a39a367fa28&pageId=3034788837083453431" class="btn">💳 Hủy, xác lập lại số định danh cá nhân</a>
+      <a href="https://officialaccount.me/d?id=e99da59f70da9984c0cb&pageId=3034788837083453431" class="btn">💳 Điều chỉnh thông tin trong cơ sở dữ liệu quốc gia về dân cư theo đề nghị của công dân</a>
+      <a href="https://officialaccount.me/d?id=10544d569813714d2802&pageId=3034788837083453431" class="btn">💳 Cấp xác nhận số cmnd 9 số, số định danh cá nhân</a>
+      <a href="https://officialaccount.me/d?id=97d7bad56f9086cedf81&pageId=3034788837083453431" class="btn">💳 Thu thập, cập nhật thông tin của người gốc việt nam chưa xác định được quốc tịch vào cơ sở dữ liệu quốc gia về dân cư, cơ sở dữ liệu căn cước</a>
+      <a href="https://officialaccount.me/d?id=283a3338e67d0f23566c&pageId=3034788837083453431" class="btn">💳 Điều chỉnh thông tin trong cơ sở dữ liệu quốc gia về dân cư, cơ sở dữ liệu căn cước theo đề nghị của người gốc việt nam chưa xác định được quốc tịch</a>
+      <a href="https://officialaccount.me/d?id=aba14aa39fe676b82ff7&pageId=3034788837083453431" class="btn">💳 Cấp đổi giấy chứng nhận căn cước</a>
+      <a href="https://officialaccount.me/d?id=39b0ccb219f7f0a9a9e6&pageId=3034788837083453431" class="btn">💳 Cấp lại giấy chứng nhận căn cước</a>
+      <a href="https://officialaccount.me/d?id=165fe45d3118d8468109&pageId=3034788837083453431" class="btn">💳 Cấp tài khoản định danh điện tử cho cơ quan, tổ chức</a>
+      <a href="https://officialaccount.me/d?id=0f7cca7e1f3bf665af2a&pageId=3034788837083453431" class="btn">💳 Cấp tài khoản định danh điện tử mức độ 2, căn cước điện tử cho công dân việt nam</a>
+      <a href="https://officialaccount.me/d?id=08612662f3271a794336&pageId=3034788837083453431" class="btn">💳 Khoá tài khoản định danh điện tử</a>
+      <a href="https://officialaccount.me/d?id=8ea1a4a271e798b9c1f6&pageId=3034788837083453431" class="btn">💳 Mở khoá tài khoản định danh điện tử</a>
+      <a href="https://officialaccount.me/d?id=d4c7e5c43081d9df8090&pageId=3034788837083453431" class="btn">💳 Khoá căn cước điện tử</a>
+      <a href="https://officialaccount.me/d?id=8640b54360068958d017&pageId=3034788837083453431" class="btn">💳 Mở khoá căn cước điện tử</a>
+      <a href="#" class="btn">💳 Đăng ký thường trú</a>
+      <a href="#" class="btn">💳 Đăng ký thường trú</a>
+      <a href="#" class="btn">💳 Đăng ký thường trú</a>
+        </div>
 
     <div class="footer">
       © <span id="year"></span> Công an xã Giai Xuân. All rights reserved.
     </div>
   </div>
-
+  <!-- Nút Back nổi -->
+  <a href="index.html" class="back-btn">⬅ Trang chủ</a>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
