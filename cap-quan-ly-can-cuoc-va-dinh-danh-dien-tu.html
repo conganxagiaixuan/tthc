@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thủ tục quản lý, đăng ký cư trú - Công an xã Giai Xuân</title>
+  <style>
+    body {
+      font-family: "Times New Roman", serif;
+      line-height: 1.6;
+      margin: 0;
+      background: url("hinh-nen-web-cax.png") no-repeat center center fixed;
+      background-size: cover;
+    }
+    .container {
+      width: calc(100% - 20px);
+      max-width: 720px;
+      margin: 15px auto;
+      padding: 20px;
+      border: 2px solid rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-sizing: border-box;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .header img {
+      width: 40%;
+      max-width: 150px;
+      height: auto;
+      margin: 0 auto 10px;
+      display: block;
+    }
+    .header h1 {
+      color: red;
+      margin: 0;
+      font-size: clamp(16px, 4vw, 22px);
+    }
+    .underline {
+      border-bottom: 2px solid #000;
+      margin: 6px auto 0;
+      width: 100%;
+    }
+    h3 {
+      text-align: center;
+      margin: 20px 0;
+      padding: 10px;
+      background: rgba(200, 230, 255, 1);
+      border: 1px solid #b0d4f1;
+      border-radius: 6px;
+      font-size: clamp(14px, 3.5vw, 18px);
+      color: #003366;
+    }
+    /* Button full width */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .links .btn {
+      display: block;
+      width: 100%;
+      text-align: left;
+      font-size: clamp(13px, 3.5vw, 16px);
+      padding: 12px 15px;
+      background: rgba(240, 240, 240, 0.95);
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #000;
+      transition: background 0.3s, transform 0.2s;
+      box-sizing: border-box;
+    }
+    .links .btn:hover {
+      background: rgba(220, 220, 220, 1);
+      transform: translateY(-2px);
+    }
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: clamp(12px, 3vw, 14px);
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="logo-cand.png" alt="Logo Công an">
+      <h1>CÔNG AN TỈNH NGHỆ AN</h1>
+      <h1>CÔNG AN XÃ GIAI XUÂN</h1>
+      <div class="underline"></div>
+    </div>
 
+    <h3>THỦ TỤC HÀNH CHÍNH THUỘC LĨNH VỰC ĐĂNG KÝ, QUẢN LÝ CƯ TRÚ</h3>
+
+    <div class="links">
+      <a href="https://officialaccount.me/d?id=284bc4dd1198f8c6a189&pageId=3034788837083453431" class="btn">🏠 Đăng ký thường trú</a>
+      <a href="https://officialaccount.me/d?id=929d1f0bca4e23107a5f&pageId=3034788837083453431" class="btn">🏠 Đăng ký tạm trú</a>
+      <a href="https://officialaccount.me/d?id=59951802cd4724197d56&pageId=3034788837083453431" class="btn">🏠 Điều chỉnh thông tin về cư trú trong cơ sở dữ liệu về cư trú</a>
+      <a href="https://officialaccount.me/d?id=929d1f0bca4e23107a5f&pageId=3034788837083453431" class="btn">🏠 Gia hạn tạm trú</a>
+      <a href="https://officialaccount.me/d?id=2f3deb5e3e1bd7458e0a&pageId=3034788837083453431" class="btn">🏠 Khai báo tạm vắng</a>
+      <a href="https://officialaccount.me/d?id=68de32bee7fb0ea557ea&pageId=3034788837083453431" class="btn">🏠 Khai báo thông tin về cư trú đối với người chưa đủ điều kiện đăng ký thường trú, tạm trú</a>
+      <a href="https://officialaccount.me/d?id=52c0d9a30ce6e5b8bcf7&pageId=3034788837083453431" class="btn">🏠 Tách hộ</a>
+      <a href="https://officialaccount.me/d?id=75baa18874cd9d93c4dc&pageId=3034788837083453431" class="btn">🏠 Thông báo lưu trú</a>
+      <a href="https://officialaccount.me/d?id=1675af477a02935cca13&pageId=3034788837083453431" class="btn">🏠 Xác nhận thông tin về cư trú</a>
+      <a href="https://officialaccount.me/d?id=09215d158850610e3841&pageId=3034788837083453431" class="btn">🏠 Xoá đăng ký tạm trú</a>
+      <a href="https://officialaccount.me/d?id=0f09363de3780a265369&pageId=3034788837083453431" class="btn">🏠 Xoá đăng ký thường trú</a>
+    </div>
+
+    <div class="footer">
+      © <span id="year"></span> Công an xã Giai Xuân. All rights reserved.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
