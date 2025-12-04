@@ -114,15 +114,15 @@
 
   <h3>PHẢN ÁNH KIẾN NGHỊ</h3>
 
-  <input id="name" type="text" placeholder="Họ và tên (có thể bỏ trống)" required>
-  <input id="phone" type="text" placeholder="Số điện thoại (có thể bỏ trống)" required>
-  <textarea id="content" placeholder="Nội dung tố giác, phản ánh (ghi đầy đủ thông tin: thời gian, địa điểm, .....)" rows="5" required></textarea>
+  <input id="name" type="text" placeholder="Họ và tên (bắt buộc)" required>
+  <input id="phone" type="text" placeholder="Số điện thoại (bắt buộc)" required>
+  <textarea id="content" placeholder="Ghi rõ nội dung phản ánh, kiến nghị" rows="5" required></textarea>
 
   <button id="sendBtn" onclick="sendData()">Gửi thông tin</button>
 </div>
 
 <script>
-const WEB_APP_URL = "YOUR_WEB_APP_URL";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxH68PjEtM7WKUchWYiy1qrbChRKelExIYHhjvLrc3CbSZda2kRlGfcn-GJd4soV0GS/exec";
 
 // ⚠ CHỐNG GỬI TRÙNG: Lưu dữ liệu đã gửi
 function isDuplicate(phone, content) {
