@@ -152,7 +152,8 @@ function sendData() {
     btn.innerText = "Gửi thông tin";
     return;
   }
-
+  // ⚠ Thêm dấu ' phía trước số điện thoại để giữ số 0
+  phone = "'" + phone;
   // ⚠ CHECK TRÙNG
   if (isDuplicate(phone, content)) {
     alert("Bạn đã gửi thông tin này rồi!");
