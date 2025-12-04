@@ -143,7 +143,7 @@ function sendData() {
   btn.innerText = "Đang gửi...";
 
   const name = document.getElementById("name").value.trim();
-  const phone = document.getElementById("phone").value.trim();
+  let phone = document.getElementById("phone").value.trim(); // đổi sang let để sửa
   const content = document.getElementById("content").value.trim();
 
   if (!name || !phone || !content) {
@@ -152,8 +152,10 @@ function sendData() {
     btn.innerText = "Gửi thông tin";
     return;
   }
-  // ⚠ Thêm dấu ' phía trước số điện thoại để giữ số 0
+
+  // ⚠ Thêm dấu ' phía trước số điện thoại
   phone = "'" + phone;
+
   // ⚠ CHECK TRÙNG
   if (isDuplicate(phone, content)) {
     alert("Bạn đã gửi thông tin này rồi!");
@@ -177,6 +179,7 @@ function sendData() {
   // Chuyển sang trang thông báo
   window.location.href = "success-phananh.html";
 }
+
 </script>
 
 </body>
