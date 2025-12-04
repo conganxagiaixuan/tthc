@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<title>Biểu mẫu Tố Giác</title>
+<style>
+  body { font-family: Arial; background: #f3f3f3; padding: 20px; }
+  .box {
+    max-width: 450px; margin: auto; background: white;
+    padding: 20px; border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  }
+  input, textarea {
+    width: 100%; padding: 10px; margin: 8px 0;
+    border: 1px solid #ccc; border-radius: 5px;
+  }
+  button {
+    width: 100%; padding: 12px; background: #0066ff;
+    border: none; border-radius: 5px; color: white;
+    font-size: 16px; cursor: pointer;
+  }
+  button:hover { background: #004fcc; }
+</style>
+</head>
+
+<body>
+<div class="box">
+  <h2>📌 Tố Giác Tội Phạm</h2>
+
+  <form id="fdata">
+      <label>Họ và tên</label>
+      <input type="text" id="name" required />
+
+      <label>Số điện thoại</label>
+      <input type="text" id="phone" required />
+
+      <label>Nội dung tố giác</label>
+      <textarea id="content" rows="4" required></textarea>
+
+      <button type="submit">Gửi thông tin</button>
+  </form>
+
+  <p id="msg"></p>
+</div>
+
+<script>
+  // Dán URL Apps Script của bạn vào đây
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyejPntemhYJ3BMid1hZBZlcmuODnxXmzZ51vgXHZ7j82rmuZrGfAUqO76jsDPdyWSE/exec";
+
+  document.getElementById("fdata").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const data = {
+      name: document.getElementById("name").value,
+      phone: document.getElementById("phone").value,
+      content: document.getElementById("content").value
+    };
+
+    fetch(SCRIPT_URL, {
+      method: "POST",
+      body: JSON.stringify(data)
+    })
+    .then(res => res.text())
+    .then(() => {
+      document.getElementById("msg").innerText = "✔ Gửi thành công!";
+      document.getElementById("fdata").reset();
+    })
+    .catch(() => {
+      document.getElementById("msg").innerText = "❌ Lỗi gửi dữ liệu!";
+    });
+  });
+</script>
+
+</body>
+</html>
