@@ -2,56 +2,179 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Gửi thông tin tố giác</title>
+<title>Gửi Thông Tin Tố Giác</title>
 
 <style>
-body { font-family: Arial; background: #f4f6f8; padding: 20px; }
-.container {
-  max-width: 500px; margin: auto; background: white; padding: 25px;
-  border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-input, textarea {
-  width: 100%; padding: 10px; margin-bottom: 12px;
-  border: 1px solid #ccc; border-radius: 5px;
-}
-button {
-  background: #1a73e8; color: white; padding: 12px;
-  border: none; border-radius: 5px; width: 100%; font-size: 16px;
-}
-button:disabled { background: gray; }
+    body {
+      font-family: "Times New Roman", serif;
+      line-height: 1.6;
+      margin: 0;
+      background: url("hinh-nen-web-cax.png") no-repeat center center fixed;
+      background-size: cover;
+    }
+    .container {
+      width: calc(100% - 20px);
+      max-width: 720px;
+      margin: 15px auto;
+      padding: 20px;
+      border: 2px solid rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-sizing: border-box;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .header img {
+      width: 40%;
+      max-width: 150px;
+      height: auto;
+      margin: 0 auto 10px;
+      display: block;
+    }
+    .header h1 {
+      color: red;
+      margin: 0;
+      font-size: clamp(16px, 4vw, 22px);
+    }
+    .underline {
+      border-bottom: 2px solid #000;
+      margin: 6px auto 0;
+      width: 100%;
+    }
+    h3 {
+      text-align: center;
+      margin: 20px 0;
+      padding: 10px;
+      background: rgba(200, 230, 255, 1);
+      border: 1px solid #b0d4f1;
+      border-radius: 6px;
+      font-size: clamp(14px, 3.5vw, 18px);
+      color: #003366;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #666;
+      border-radius: 6px;
+      font-size: 16px;
+      background: rgba(255,255,255,0.8);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      background: #0066cc;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:disabled {
+      background: gray;
+    }
+
+    .back-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #007bff;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.2s;
+      z-index: 9999;
+    }
+    .back-btn:hover {
+      background: #0056b3;
+      transform: scale(1.05);
+    }
 </style>
 
 </head>
 <body>
 
+<a href="index.html" class="back-btn">⬅ Quay lại</a>
+
 <div class="container">
-  <h2>Gửi thông tin tố giác</h2>
-  <input id="name" type="text" placeholder="Họ và tên">
-  <input id="phone" type="text" placeholder="Số điện thoại">
-  <textarea id="content" placeholder="Nội dung tố giác"></textarea>
+  <div class="header">
+    <img src="quoc-huy.png">
+    <h1>CÔNG AN XÃ GIAI XUÂN</h1>
+    <div class="underline"></div>
+  </div>
+
+  <h3>TIẾP NHẬN TIN BÁO TỐ GIÁC</h3>
+
+  <input id="name" type="text" placeholder="Họ và tên" required>
+  <input id="phone" type="text" placeholder="Số điện thoại" required>
+  <textarea id="content" placeholder="Nội dung tố giác" rows="5" required></textarea>
+
   <button id="sendBtn" onclick="sendData()">Gửi thông tin</button>
 </div>
 
 <script>
+const WEB_APP_URL = "YOUR_WEB_APP_URL";
+
+// ⚠ CHỐNG GỬI TRÙNG: Lưu dữ liệu đã gửi
+function isDuplicate(phone, content) {
+  let lastPhone = localStorage.getItem("last_phone");
+  let lastContent = localStorage.getItem("last_content");
+
+  return lastPhone === phone && lastContent === content;
+}
+
+function saveLastSubmit(phone, content) {
+  localStorage.setItem("last_phone", phone);
+  localStorage.setItem("last_content", content);
+}
+
 function sendData() {
-  const url = "YOUR_WEB_APP_URL";
   const btn = document.getElementById("sendBtn");
   btn.disabled = true;
   btn.innerText = "Đang gửi...";
 
-  const data = {
-    name: document.getElementById("name").value,
-    phone: document.getElementById("phone").value,
-    content: document.getElementById("content").value
-  };
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const content = document.getElementById("content").value.trim();
 
-  fetch(url, {
+  if (!name || !phone || !content) {
+    alert("Vui lòng nhập đầy đủ thông tin!");
+    btn.disabled = false;
+    btn.innerText = "Gửi thông tin";
+    return;
+  }
+
+  // ⚠ CHECK TRÙNG
+  if (isDuplicate(phone, content)) {
+    alert("Bạn đã gửi thông tin này rồi!");
+    btn.disabled = false;
+    btn.innerText = "Gửi thông tin";
+    return;
+  }
+
+  let data = { name, phone, content };
+
+  fetch(WEB_APP_URL, {
     method: "POST",
     mode: "no-cors",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data)
   });
 
+  // Lưu chống trùng
+  saveLastSubmit(phone, content);
+
+  // Chuyển sang trang thông báo
   window.location.href = "success.html";
 }
 </script>
