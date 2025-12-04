@@ -106,31 +106,30 @@
 
 <a href="index.html" class="back-btn">⬅ Quay lại</a>
 
-  <div class="container">
-    <div class="header">
-      <img src="logo-cand.png" alt="Logo Công an">
-      <h1>CÔNG AN TỈNH NGHỆ AN</h1>
-      <h1>CÔNG AN XÃ GIAI XUÂN</h1>
-      <div class="underline"></div>
-    </div>
+<div class="container">
+  <div class="header">
+    <img src="logo-cand.png" alt="Logo Công an">
+    <h1>CÔNG AN TỈNH NGHỆ AN</h1>
+    <h1>CÔNG AN XÃ GIAI XUÂN</h1>
+    <div class="underline"></div>
+  </div>
 
   <h3>GỬI THÔNG TIN TỐ GIÁC TỘI PHẠM, PHẢN ÁNH TÌNH HÌNH AN NINH TRẬT TỰ</h3>
 
-  <input id="name" type="text" placeholder="Họ và tên (có thể bỏ trống)" required>
-  <input id="phone" type="text" placeholder="Số điện thoại (có thể bỏ trống)" required>
+  <input id="name" type="text" placeholder="Họ và tên (có thể bỏ trống)">
+  <input id="phone" type="text" placeholder="Số điện thoại (có thể bỏ trống)">
   <textarea id="content" placeholder="Nội dung tố giác, phản ánh (ghi đầy đủ thông tin: thời gian, địa điểm, .....)" rows="5" required></textarea>
 
   <button id="sendBtn" onclick="sendData()">Gửi thông tin</button>
 </div>
 
 <script>
-const WEB_APP_URL = "YOUR_WEB_APP_URL";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxLVNjlxFSOp3I--UOffxvb-xpva-rqida5isN0SMEwhreekG-XTn3v1uoFtOQX6zpx/exec";
 
-// ⚠ CHỐNG GỬI TRÙNG: Lưu dữ liệu đã gửi
+// CHỐNG GỬI TRÙNG
 function isDuplicate(phone, content) {
   let lastPhone = localStorage.getItem("last_phone");
   let lastContent = localStorage.getItem("last_content");
-
   return lastPhone === phone && lastContent === content;
 }
 
@@ -144,18 +143,23 @@ function sendData() {
   btn.disabled = true;
   btn.innerText = "Đang gửi...";
 
-  const name = document.getElementById("name").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const content = document.getElementById("content").value.trim();
+  let name = document.getElementById("name").value.trim();
+  let phone = document.getElementById("phone").value.trim();
+  let content = document.getElementById("content").value.trim();
 
-  if (!name || !phone || !content) {
-    alert("Vui lòng nhập đầy đủ thông tin!");
+  // ⚠ BẮT BUỘC PHẢI CÓ NỘI DUNG
+  if (!content) {
+    alert("Vui lòng nhập nội dung phản ánh!");
     btn.disabled = false;
     btn.innerText = "Gửi thông tin";
     return;
   }
 
-  // ⚠ CHECK TRÙNG
+  // ⚠ NẾU BỎ TRỐNG → TỰ ĐIỀN ẨN DANH
+  if (!name) name = "Ẩn danh";
+  if (!phone) phone = "Ẩn danh";
+
+  // Chống gửi trùng
   if (isDuplicate(phone, content)) {
     alert("Bạn đã gửi thông tin này rồi!");
     btn.disabled = false;
@@ -172,10 +176,8 @@ function sendData() {
     body: JSON.stringify(data)
   });
 
-  // Lưu chống trùng
   saveLastSubmit(phone, content);
 
-  // Chuyển sang trang thông báo
   window.location.href = "success.html";
 }
 </script>
