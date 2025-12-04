@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Đã gửi thành công</title>
+
+<style>
+    body {
+      font-family: "Times New Roman", serif;
+      line-height: 1.6;
+      margin: 0;
+      background: url("hinh-nen-web-cax.png") no-repeat center center fixed;
+      background-size: cover;
+    }
+    .container {
+      width: calc(100% - 20px);
+      max-width: 720px;
+      margin: 15px auto;
+      padding: 20px;
+      border: 2px solid rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-sizing: border-box;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .header img {
+      width: 40%;
+      max-width: 150px;
+      height: auto;
+      margin: 0 auto 10px;
+      display: block;
+    }
+    .header h1 {
+      color: red;
+      margin: 0;
+      font-size: clamp(16px, 4vw, 22px);
+    }
+    .underline {
+      border-bottom: 2px solid #000;
+      margin: 6px auto 0;
+      width: 100%;
+    }
+    h3 {
+      text-align: center;
+      margin: 20px 0;
+      padding: 10px;
+      background: rgba(200, 230, 255, 1);
+      border: 1px solid #b0d4f1;
+      border-radius: 6px;
+      font-size: clamp(14px, 3.5vw, 18px);
+      color: #003366;
+    }
+
+    .msg {
+      text-align: center;
+      font-size: 18px;
+      background: rgba(255,255,255,0.8);
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      margin: 15px 0;
+    }
+
+    .btn-box {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      margin: 6px;
+      font-size: 16px;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+      background: #007bff;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+
+    .btn.disabled {
+      background: gray;
+      pointer-events: none;
+    }
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+  <div class="container">
+    <div class="header">
+      <img src="logo-cand.png" alt="Logo Công an">
+      <h1>CÔNG AN TỈNH NGHỆ AN</h1>
+      <h1>CÔNG AN XÃ GIAI XUÂN</h1>
+      <div class="underline"></div>
+    </div>
+
+  <h3>THÔNG BÁO</h3>
+
+  <div class="msg">
+    <b>Thông tin của bạn đã được gửi thành công.</b><br>
+    Công an xã Giai Xuân sẽ tiếp nhận và xử lý theo quy định.<br><br>
+    Xin cảm ơn sự hợp tác của bạn!
+  </div>
+
+  <div class="btn-box">
+    <a id="btnAgain" href="to-giac-toi-pham.html" class="btn">📨 Gửi thêm phản ánh khác</a>
+  </div>
+
+</div>
+
+<script>
+// Nếu gửi trùng → khóa nút "Gửi thêm"
+let lastPhone = localStorage.getItem("last_phone");
+let lastContent = localStorage.getItem("last_content");
+
+if (lastPhone && lastContent) {
+  // Nếu muốn chống gửi tiếp 100% thì bật dòng này:
+  // document.getElementById("btnAgain").classList.add("disabled");
+}
+</script>
+
+</body>
+</html>
