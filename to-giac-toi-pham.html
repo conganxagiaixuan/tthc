@@ -156,6 +156,10 @@ function sendData() {
   // ⚠ NẾU BỎ TRỐNG → TỰ ĐIỀN ẨN DANH
   if (!name) name = "Ẩn danh";
   if (!phone) phone = "Ẩn danh";
+     // Nếu có số điện thoại → thêm dấu ' phía trước
+  if (phone !== "Ẩn danh") {
+    phone = "'" + phone;  // <- đây là chỗ quan trọng
+  }
 
   // Chống gửi trùng
   if (isDuplicate(phone, content)) {
